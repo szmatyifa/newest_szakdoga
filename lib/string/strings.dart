@@ -7,3 +7,5 @@ final thankServiceText = 'Thank you for the booking!';
 final bookingInformationText = 'Booking Information';
 
 final titleText ='Barber Appointment';
+
+final doneServiceText= 'Done Services';
