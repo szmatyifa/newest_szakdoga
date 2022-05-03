@@ -17,11 +17,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:im_stepper/stepper.dart';
 import 'package:intl/intl.dart';
 
-import 'components/barber_list.dart';
-import 'components/city_list.dart';
-import 'components/confirm.dart';
-import 'components/salon_list.dart';
-import 'components/time_slot.dart';
+import 'components/user_widgets/barber_list.dart';
+import 'components/user_widgets/city_list.dart';
+import 'components/user_widgets/confirm.dart';
+import 'components/user_widgets/salon_list.dart';
+import 'components/user_widgets/time_slot.dart';
 
 class BookingScreen extends ConsumerWidget{
   final scaffoldKey = new GlobalKey<ScaffoldState>();

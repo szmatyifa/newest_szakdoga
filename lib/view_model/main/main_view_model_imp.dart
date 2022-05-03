@@ -1,5 +1,5 @@
 import 'package:barber_shop/state/state_management.dart';
-import 'package:barber_shop/ui/components/register_dialog.dart';
+import 'package:barber_shop/ui/components/user_widgets/register_dialog.dart';
 import 'package:barber_shop/utils/utils.dart';
 import 'package:barber_shop/view_model/main/main_view_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
