@@ -15,6 +15,7 @@ import 'package:barber_shop/string/strings.dart';
 import 'package:barber_shop/utils/utils.dart';
 import 'package:barber_shop/view_model/done_service/done_service_view_model_imp.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:chips_choice/chips_choice.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -131,26 +132,20 @@ class DoneService extends ConsumerWidget {
                         return SingleChildScrollView(
                             child: Column(
                               children: [
-
-                                Wrap(
-                                  children: services.map((e) =>
-                                      Padding(
-                                        padding: const EdgeInsets.all(4),
-                                        child: ChoiceChip(
-                                          selected: doneServiceViewModel
-                                              .isSelectedService(context, e),
-                                          selectedColor: Colors.blue,
-                                          label: Text('${e.name}'),
-                                          labelStyle: TextStyle(
-                                              color: Colors.white),
-                                          backgroundColor: Colors.teal,
-                                          onSelected: (isSelected) =>
-                                              doneServiceViewModel
-                                                  .onSelectedchip(
-                                                  context, isSelected, e)
-                                          ,
-                                        ),
-                                      )).toList(),
+                                ChipsChoice<ServiceModel>.multiple(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    wrapped: true,
+                                    value: servicesWatch,
+                                    onChanged: (isSelected)=> context.read(selectedServices).state = isSelected,
+                                    choiceStyle: C2ChoiceStyle(elevation: 8),
+                                    choiceItems: C2Choice.listFrom<
+                                        ServiceModel,
+                                        ServiceModel>(
+                                        source: services,
+                                        value: (index,value) => value,
+                                        label: (index,value) => '${value
+                                            .name} (\$${value.price}'  )
                                 ),
 
                                 Container(

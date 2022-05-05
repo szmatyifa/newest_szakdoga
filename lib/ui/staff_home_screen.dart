@@ -47,6 +47,14 @@ class StaffHome extends ConsumerWidget{
                     ? yourAppointmentText
                     : staffHomeText),
             backgroundColor: Color(0xFF383838),
+            actions: [
+              currentStaffStep == 3
+                  ? InkWell(
+                    child: Icon(Icons.history),
+                    onTap: ()=> Navigator.of(context).pushNamed('/bookingHistory'),
+              )
+                  : Container()
+            ],
           ),
           body: Column(children: [
             //Area

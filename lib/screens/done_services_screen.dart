@@ -13,6 +13,7 @@ import 'package:barber_shop/model/user_model.dart';
 import 'package:barber_shop/state/state_management.dart';
 import 'package:barber_shop/utils/utils.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:chips_choice/chips_choice.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -111,6 +112,23 @@ class DoneService extends ConsumerWidget{
                         var servicesWatch = watch(selectedServices).state;
                         return SingleChildScrollView(
                           child: Column(children: [
+
+                            ChipsChoice<ServiceModel>.multiple(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                wrapped: true,
+                                value: servicesWatch,
+                                onChanged: (isSelected)=> context.read(selectedServices).state = isSelected,
+                                choiceStyle: C2ChoiceStyle(elevation: 8),
+                                choiceItems: C2Choice.listFrom<
+                                    ServiceModel,
+                                    ServiceModel>(
+                                    source: services,
+                                    value: (index,value) => value,
+                                    label: (index,value) => '${value
+                                        .name} (\$${value.price}'  )
+                            ),
+
                             Container(
                               width: MediaQuery.of(context).size.width,
                               child: ElevatedButton(

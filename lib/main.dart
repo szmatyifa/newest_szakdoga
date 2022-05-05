@@ -1,6 +1,7 @@
 
 import 'package:barber_shop/screens/booking_screen.dart';
 import 'package:barber_shop/state/state_management.dart';
+import 'package:barber_shop/ui/barber_booking_history_screen.dart';
 import 'package:barber_shop/ui/done_services_screen.dart';
 import 'package:barber_shop/ui/home_screen.dart';
 import 'package:barber_shop/ui/staff_home_screen.dart';
@@ -41,31 +42,35 @@ class MyApp extends StatelessWidget {
                 settings: settings,
                 child: StaffHome(),
                 type: PageTransitionType.fade);
-            break;
+
           case '/doneService':
             return PageTransition(
                 settings: settings,
                 child: DoneService(),
                 type: PageTransitionType.fade);
-            break;
+
           case '/home':
             return PageTransition(
                 settings: settings,
                 child: HomePage(),
                 type: PageTransitionType.fade);
-            break;
+
           case '/history':
             return PageTransition(
                 settings: settings,
                 child: UserHistory(),
                 type: PageTransitionType.fade);
-            break;
+
           case '/booking':
             return PageTransition(
                 settings: settings,
                 child: BookingScreen(),
                 type: PageTransitionType.fade);
-            break;
+          case '/bookingHistory':
+            return PageTransition(
+                settings: settings,
+                child: BarberHistoryScreen(),
+                type: PageTransitionType.fade);
           default: return null;
         }
       },

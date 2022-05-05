@@ -44,7 +44,7 @@ dependencies:
   ntp: any
   add_2_calendar: any
   dcdg: any
-
+  chips_choice: any
 
 
 dev_dependencies:
