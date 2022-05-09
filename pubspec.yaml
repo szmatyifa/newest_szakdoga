@@ -23,6 +23,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  mockito: any
+  rxdart:
+  build_runner:
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -98,20 +98,21 @@ class HomePage extends ConsumerWidget{
                         ),),
                     ),
                     Expanded(
-                      child: Container(
-                        child: Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8),
-                            child:Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(Icons.web, size: 50,),
-                                Text('FAQ', style: GoogleFonts.robotoMono(),)
-                              ] ,
+                        child: GestureDetector(onTap: ()=> Navigator.pushNamed(context, '/Prices'),
+                          child: Container(
+                            child: Card(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8),
+                                child:Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(Icons.account_balance_wallet, size: 50,),
+                                    Text('Prices', style: GoogleFonts.robotoMono(),)
+                                  ] ,
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                      ),
+                          ),),
                     ),
                     Expanded(
                       child: GestureDetector(onTap: () => Navigator.pushNamed(context, '/history'),
@@ -154,9 +155,9 @@ class HomePage extends ConsumerWidget{
                         );
                       }
                     }),
-                //Lookbook
+
                 Padding(padding: const EdgeInsets.all(8), child: Row(children: [
-                  Text('Hair styles:', style: GoogleFonts.robotoMono(fontSize: 24),)
+                  Text('From our Salons', style: GoogleFonts.robotoMono(fontSize: 24),)
                 ],),),
                 FutureBuilder(
                     future: homeViewModel.displayLookbook(),

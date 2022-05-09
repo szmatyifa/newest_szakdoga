@@ -12,6 +12,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
+
 Future<BookingModel> getDetailBooking(BuildContext context, int timeSlot) async{
   CollectionReference userRef = FirebaseFirestore.instance
       .collection('AllSalon')

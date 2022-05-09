@@ -1,7 +1,8 @@
 
-import 'package:barber_shop/screens/booking_screen.dart';
 import 'package:barber_shop/state/state_management.dart';
+import 'package:barber_shop/ui/Prices.dart';
 import 'package:barber_shop/ui/barber_booking_history_screen.dart';
+import 'package:barber_shop/ui/booking_screen.dart';
 import 'package:barber_shop/ui/done_services_screen.dart';
 import 'package:barber_shop/ui/home_screen.dart';
 import 'package:barber_shop/ui/staff_home_screen.dart';
@@ -29,6 +30,9 @@ Future<void> main() async{
 }
 
 class MyApp extends StatelessWidget {
+
+
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -71,6 +75,11 @@ class MyApp extends StatelessWidget {
                 settings: settings,
                 child: BarberHistoryScreen(),
                 type: PageTransitionType.fade);
+          case '/Prices':
+            return PageTransition(
+                settings: settings,
+                child: Prices(),
+                type: PageTransitionType.fade);
           default: return null;
         }
       },
@@ -97,6 +106,9 @@ class MyHomePage extends ConsumerWidget {
   final scaffoldState = new GlobalKey<ScaffoldState>();
 
   final mainViewModel = MainViewModelImp();
+
+
+
 
   @override
   Widget build(BuildContext context, ScopedReader watch) {
